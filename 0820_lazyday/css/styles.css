@@ -1,0 +1,325 @@
+@font-face {
+    font-family: 'ChareInk-Bold';
+    src: url(../fonts/ChareInk-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'Merriweather';
+    font-style: normal;
+    src: url(../fonts/Merriweather.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    position: fixed;
+    right: 0;
+    width: 80%;
+    height: 100%;
+    overflow: auto;
+    padding: 40px;
+}
+
+.central-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 600px;
+}
+
+
+/* Заголовки */
+
+h1,
+h2 {
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 5px 5px #d9db4f;
+    font-family: 'ChareInk-Bold';
+}
+
+h1 {
+    margin-bottom: 30px;
+    font-size: 40px;
+}
+
+h2 {
+    margin-bottom: 15px;
+    font-size: 30px;
+}
+
+
+/* Абзацы */
+
+p,
+p a {
+    text-indent: 20px;
+    margin-bottom: 20px;
+    line-height: 26px;
+    font-family: 'Merriweather';
+    font-size: 17px;
+}
+
+p::first-letter {
+    font-size: 200%;
+    font-weight: bold;
+    color: #d9db4f;
+}
+
+p#b22::first-letter {
+    font-size: 100%;
+    font-weight: normal;
+    color: black;
+}
+
+
+/* Навигационная панель */
+
+nav {
+    position: fixed;
+    display: flex;
+    align-items: flex-start;
+    width: 20%;
+    height: 100%;
+    background: linear-gradient(to top left, #e2e467, #fff);
+}
+
+ul,
+li,
+label,
+a {
+    width: 100%;
+    color: #000;
+    font-family: 'Montserrat', 'Open Sans', sans-serif;
+    display: block;
+    font-weight: bold;
+    font-size: medium;
+}
+
+i.material-icons {
+    font-size: 18px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+label {
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: all .25s;
+}
+
+label::selection,
+label i::selection,
+li a::selection {
+    background: transparent;
+}
+
+label::-moz-selection,
+label i::-moz-selection,
+li a::-moz-selection {
+    background: transparent;
+}
+
+li {
+    height: 40px;
+    overflow: hidden;
+    transition: height 0.3s;
+}
+
+li a {
+    font-size: small;
+    text-decoration: none;
+    display: block;
+    padding: 15px 25px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+li a:hover {
+    background-color: #d9db4f;
+    box-shadow: inset 5px 0px 0px 0px #fff;
+}
+
+label:hover {
+    text-shadow: 0px 0px 10px #fff;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]:checked+li {
+    height: 253.4px;
+}
+
+
+/* Картинка с описанием */
+
+.figure {
+    margin: 1%;
+    display: table;
+    table-layout: fixed;
+    float: right;
+    border: 1px solid;
+    border-bottom: 0;
+    padding: 7px;
+    background: #f0f0f0;
+}
+
+.figure>figcaption {
+    background: #f0f0f0;
+    border: 1px solid;
+    border-top: 0;
+    padding: 3%;
+    padding-top: 0%;
+    display: table-caption;
+    caption-side: bottom;
+}
+
+.scrollable-horizontal-gallery {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 1%;
+}
+
+.scrollable-horizontal-gallery figure {
+    background-color: #f0f0f0;
+    display: table;
+    margin: 1%;
+    padding: 1%;
+}
+
+.scrollable-horizontal-gallery figure figcaption {
+    padding: 1%;
+    background-color: #f0f0f0;
+    display: table-caption;
+    caption-side: bottom;
+}
+
+#map {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 5%;
+    max-width: 600px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    transition: transform 0.4s ease;
+}
+
+.img-box {
+    margin: 5px;
+    height: 200px;
+    width: 280px;
+    overflow: hidden;
+}
+
+.img-box:hover img {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.button {
+    width: auto;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+    color: black;
+}
+
+a.button:hover {
+    background-color: #e4e4e4;
+}
+
+
+/* Всплывающая подсказка */
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 245px;
+    left: 0;
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 1;
+    box-shadow: 0 0 5px 5px #555;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+
+/* Движущийся элемент */
+
+.moving-element {
+    margin: auto;
+    margin-top: 22px;
+    height: 50px;
+    width: 50px;
+    transform: rotate(45deg);
+    background-color: #d9db4f;
+    transition: 6s;
+}
+
+.moving-element:hover {
+    transform: rotate(360deg);
+}
+
+
+/* Анимация */
+
+.swing {
+    max-width: 300px;
+    animation: swing ease-in-out 1s infinite alternate;
+    transform-origin: center;
+}
+
+@keyframes swing {
+    0% {
+        transform: rotate(6deg);
+    }
+    100% {
+        transform: rotate(-6deg);
+    }
+}
+
+@media screen and (max-width: 911px) {
+    nav {
+        width: 100%;
+        position: relative;
+    }
+    main {
+        width: 100%;
+        position: relative;
+    }
+    input:checked+li {
+        max-height: 253.4px;
+    }
+}
